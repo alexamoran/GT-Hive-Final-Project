@@ -99,7 +99,9 @@ public class BuildingFragment extends android.support.v4.app.Fragment {
 
         }
 
-        averageCrowd = myList1.get(0);
+        if (myList1.get(0).size() > 0) {
+            averageCrowd = myList1.get(0);
+        }
 
         // Query our API for today's value points for the building
         FetchValuesTask task2 = new FetchValuesTask(averageCrowd, mBuilding.getBId(),"today");
@@ -113,8 +115,9 @@ public class BuildingFragment extends android.support.v4.app.Fragment {
 
         }
 
-        todaysCrowd = myList2.get(0);
-
+        if (myList2.get(0).size() > 0) {
+            todaysCrowd = myList2.get(0);
+        }
 
         // Get the current hour of the day for todays List
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
